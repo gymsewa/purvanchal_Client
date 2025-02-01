@@ -48,7 +48,7 @@ export default function HeroSection({ onEnquire }) {
   return (
     <div className="relative min-h-screen flex items-center">
       <Image
-        src="/Purvanchal_Img.jpg"
+        src="/bannerImg.jpg"
         alt="Purvanchal Luxury Residences"
         fill
         className="object-cover"
