@@ -103,7 +103,7 @@ const Footer = ({ onEnquire }) => {
           </div> */}
         </div>
 
-        <div className="fixed bottom-6 right-6 flex flex-col gap-4">
+        <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
           <a
             href="tel:+917860060042"
             className={`bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors ${

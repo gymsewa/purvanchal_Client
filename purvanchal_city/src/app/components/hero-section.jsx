@@ -48,10 +48,10 @@ export default function HeroSection({ onEnquire }) {
   return (
     <div className="relative min-h-screen flex items-center">
       <Image
-        src="/bannerImg.jpg"
+        src="/purvanchalroyalcitybannermob1.webp"
         alt="Purvanchal Luxury Residences"
         fill
-        className="object-cover"
+        className="object-fill"
         priority
       />
       
