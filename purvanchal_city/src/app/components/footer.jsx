@@ -113,7 +113,7 @@ const Footer = ({ onEnquire }) => {
             <Phone className="h-6 w-6 text-white" />
           </a>
           <a
-            href="https://wa.me/7860060081"
+            href="https://wa.me/7860060042"
             className={`bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors ${
               isBlinking ? "animate-pulse" : ""
             }`}

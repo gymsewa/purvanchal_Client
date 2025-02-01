@@ -206,8 +206,8 @@ export default function Contact() {
                       {
                         icon: <Phone className="w-5 h-5" />,
                         title: "Sales Enquiry",
-                        content: "+91 7860060081",
-                        action: "tel:+917860060081"
+                        content: "+91 7860060042",
+                        action: "tel:+917860060042"
                       },
                       {
                         icon: <Mail className="w-5 h-5" />,
