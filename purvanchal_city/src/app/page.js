@@ -22,10 +22,8 @@ export default function Home() {
   }
 
   const handleFormSubmit = async (formData) => {
-    // Handle form submission
     console.log(formData)
     setIsModalOpen(false)
-    // Show success message or handle download
   }
 
   return (
