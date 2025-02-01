@@ -8,6 +8,8 @@ import Amenities from "./components/amenities"
 import EnquiryModal from "./components/enquiry-modal"
 import LocationSection from "./components/location-section"
 import Contact from "./components/contact"
+import Footer from "./components/footer"
+import ImageGallery from "./components/gallerySection"
 
 
 export default function Home() {
@@ -27,13 +29,15 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Navbar />
       <HeroSection onEnquire={handleEnquiry} />
       <Specifications onEnquire={handleEnquiry} />
-      <Amenities />
+      <Amenities/>
       <LocationSection />
-      <Contact/>
+      {/* <ImageGallery/> */}
+      <Contact />
+      <Footer onEnquire={handleEnquiry}/>
 
       <EnquiryModal
         isOpen={isModalOpen}
@@ -42,13 +46,12 @@ export default function Home() {
         title={
           modalType === "brochure"
             ? "Download Brochure"
-            : modalType === "booking"
-              ? "Book Your Dream Home"
-              : "Request Information"
+            : modalType === "specifications"
+              ? "Request Specifications"
+              : "Price Enquiry"
         }
-        ctaText={modalType === "brochure" ? "Download Now" : "Submit Enquiry"}
+        ctaText="Submit Enquiry"
       />
     </main>
   )
 }
-

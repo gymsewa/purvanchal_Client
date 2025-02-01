@@ -26,7 +26,7 @@ export default function Amenities() {
   ]
 
   return (
-    <section id="amenities" className="py-20">
+    <section id="amenities" className=" py-10 max-h[80vh]">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
@@ -64,7 +64,7 @@ export default function Amenities() {
           >
             <div className="aspect-square rounded-2xl overflow-hidden">
               <Image
-                src="/Purvanchal_Img.jpg"
+                src="/imagepurvanchal2.jpg"
                 alt="Luxury Amenities"
                 fill
                 className="object-cover"

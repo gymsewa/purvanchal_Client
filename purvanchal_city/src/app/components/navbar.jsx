@@ -34,7 +34,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-8">
             <NavLink href="#about" scrolled={scrolled}>
-              About
+              Home
             </NavLink>
             <NavLink href="#specifications" scrolled={scrolled}>
               Specifications
@@ -48,12 +48,12 @@ export default function Navbar() {
           </div>
 
           <motion.a
-            href="tel:+918929814406"
+            href="tel:+917860060042"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={`
               flex items-center px-6 py-2 rounded-full space-x-2
-              ${scrolled ? "bg-primary text-white hover:bg-primary-dark" : "bg-white/10 text-white hover:bg-white/20"}
+              ${scrolled ? "bg-primary text-black bg-black/10 hover:bg-primary-dark" : "bg-white/10 text-white hover:bg-white/20"}
               transition-all duration-300
             `}
           >

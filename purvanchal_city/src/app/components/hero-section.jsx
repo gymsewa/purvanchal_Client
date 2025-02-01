@@ -1,13 +1,52 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Download, PhoneCall, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
+
+const BlinkingBanner = () => {
+  return (
+    <motion.div
+      animate={{
+        backgroundColor: ['#ff4444', '#ff8c00'],
+        scale: [1, 1.02, 1],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse"
+      }}
+      className="absolute top-[10%] left-0 right-0 z-20 py-2 text-center text-white font-bold"
+    >
+      🔥 Limited Time Offer - Book Now & Get 10% Discount! Hurry Up! 🏠
+    </motion.div>
+  );
+};
+
+const ContactButtons = () => {
+  return (
+    <div className="fixed right-4 bottom-4 flex flex-col gap-2 z-50">
+      <motion.a
+        href="tel:+1234567890"
+        whileHover={{ scale: 1.1 }}
+        className="bg-green-500 p-3 rounded-full text-white"
+      >
+        <PhoneCall className="w-6 h-6" />
+      </motion.a>
+      <motion.a
+        href="https://wa.me/1234567890"
+        whileHover={{ scale: 1.1 }}
+        className="bg-[#25D366] p-3 rounded-full text-white"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </motion.a>
+    </div>
+  );
+};
 
 export default function HeroSection({ onEnquire }) {
   return (
     <div className="relative min-h-screen flex items-center">
-      {/* Background Image */}
       <Image
         src="/Purvanchal_Img.jpg"
         alt="Purvanchal Luxury Residences"
@@ -16,20 +55,30 @@ export default function HeroSection({ onEnquire }) {
         priority
       />
       
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/80" />
+      <div className="absolute inset-0 bg-black/40" />
+      
+      {/* <BlinkingBanner /> */}
+      {/* <ContactButtons /> */}
 
-      {/* Content */}
-      <div className="container mx-auto px-4 pt-20 relative z-10">
+      <div className="container mx-auto px-10 pt-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-white/10 text-white mb-6">
-              New Launch
-            </span>
+            <motion.span
+              animate={{
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+              }}
+              className="inline-block px-4 py-2 rounded-full bg-red-500 text-white mb-6"
+            >
+              🎉 New Launch - Special Prices
+            </motion.span>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
               Purvanchal
               <span className="block animate-shine">New Launch</span>
@@ -42,8 +91,8 @@ export default function HeroSection({ onEnquire }) {
                 onClick={() => onEnquire('booking')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-accent text-primary font-semibold rounded-lg 
-                          hover:bg-accent-dark transition-all duration-300 flex items-center justify-center"
+                className="px-8 py-4 bg-red-500 text-lg text-white font-semibold rounded-lg 
+                          hover:bg-red-600 transition-all duration-300 flex items-center justify-center"
               >
                 Book Now
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -52,10 +101,10 @@ export default function HeroSection({ onEnquire }) {
                 onClick={() => onEnquire('brochure')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg 
-                          hover:bg-white/20 transition-all duration-300"
+                className="px-8 py-4 flex items-center justify-center bg-white/20 text-white font-semibold text-lg rounded-lg 
+                          hover:bg-white/30 transition-all duration-300"
               >
-                Download Brochure
+                Download Brochure <Download className="ml-2 w-6 h-6" />
               </motion.button>
             </div>
           </motion.div>
@@ -66,13 +115,20 @@ export default function HeroSection({ onEnquire }) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:justify-self-end"
           >
-            <div className="glass rounded-xl p-8 max-w-md">
-              <h3 className="text-2xl font-bold text-white mb-6">Pre-Launch Offers</h3>
+            <div className="glass rounded-xl p-8 max-w-md backdrop-blur-md bg-black/30">
+              <h3 className="text-2xl font-bold text-white mb-6">
+                <motion.span
+                  animate={{ color: ['#ffffff', '#ffdd00', '#ffffff'] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  Limited Time Pre-Launch Offers
+                </motion.span>
+              </h3>
               <div className="space-y-4">
                 {[
-                  "Pay More Save More - On Request",
-                  "Premium Priority Discount - On Request",
-                  "4 BHK Special Upgrade Discount - On Request"
+                  "🌟 Pay More Save More - Special Discount",
+                  "💎 Premium Priority Location - First 50 Bookings",
+                  "🏆 4 BHK Special Upgrade - Limited Units"
                 ].map((offer, index) => (
                   <motion.div
                     key={index}
@@ -81,7 +137,12 @@ export default function HeroSection({ onEnquire }) {
                     transition={{ delay: 0.4 + (index * 0.1) }}
                     className="flex items-center space-x-3 text-white/90"
                   >
-                    <span className="w-2 h-2 rounded-full bg-accent" />
+                    <motion.div
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 1, repeat: Infinity, delay: index * 0.3 }}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-yellow-400" />
+                    </motion.div>
                     <span>{offer}</span>
                   </motion.div>
                 ))}
@@ -91,7 +152,6 @@ export default function HeroSection({ onEnquire }) {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
@@ -103,5 +163,5 @@ export default function HeroSection({ onEnquire }) {
         <span className="text-sm">Scroll to explore</span>
       </motion.div>
     </div>
-  )
+  );
 }

@@ -1,40 +1,47 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { MapPin, Train, School, Building2, Hospital, ShoppingBag } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  Train,
+  School,
+  Building2,
+  Hospital,
+  ShoppingBag,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function LocationSection() {
   const locations = [
     {
       icon: Train,
-      name: "Knowledge Park 2 Metro Station",
-      distance: "5.2 km",
+      name: " Jewar Airport",
+      distance: "15 km",
     },
     {
       icon: Building2,
-      name: "Gautam Buddha University",
-      distance: "3 km",
+      name: "Yamuna Expressway",
+      distance: "1-2 km",
     },
     {
       icon: School,
-      name: "JP International School",
-      distance: "4.3 km",
+      name: "Education Hub",
+      distance: "2-3 km",
     },
     {
       icon: ShoppingBag,
-      name: "MSX Mall",
-      distance: "5.6 km",
+      name: "Galgotiya University",
+      distance: "6-7 km",
     },
     {
       icon: Hospital,
-      name: "Kailash Hospital, Greater",
-      distance: "7.2 km",
+      name: "Metro(Jewar to Pari Chowk)",
+      distance: "1-2 km",
     },
-  ]
+  ];
 
   return (
-    <section id="location" className="bg-gray-50">
+    <section id="location" className="pt-10 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,11 +51,14 @@ export default function LocationSection() {
         >
           <h2 className="text-4xl font-bold mb-6">Location</h2>
           <p className="text-gray-600 leading-relaxed">
-            Purvanchal Royal City in Greater Noida offers exceptional connectivity, just 7 minutes from Pari Chowk and
-            28 minutes from the DND Flyway. Its proximity to major employment hubs, including Knowledge Park II Metro
-            Station and Sector 18 Noida, ensures convenient commutes. Nearby educational institutions, such as KR
-            Mangalam School and G D Goenka School, along with recreational spots like The Grand Venice Mall, enhance the
-            living experience in this serene and secure environment.
+            Purvanchal Royal City in Greater Noida offers exceptional
+            connectivity, just 7 minutes from Pari Chowk and 28 minutes from the
+            DND Flyway. Its proximity to major employment hubs, including
+            Knowledge Park II Metro Station and Sector 18 Noida, ensures
+            convenient commutes. Nearby educational institutions, such as KR
+            Mangalam School and G D Goenka School, along with recreational spots
+            like The Grand Venice Mall, enhance the living experience in this
+            serene and secure environment.
           </p>
         </motion.div>
 
@@ -80,7 +90,7 @@ export default function LocationSection() {
               </motion.div>
             ))}
 
-            <div className="bg-white rounded-lg p-6 shadow-md mt-6">
+            {/* <div className="bg-white rounded-lg p-6 shadow-md mt-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm text-gray-600">Address:</label>
@@ -99,7 +109,7 @@ export default function LocationSection() {
                   <p className="font-medium">India</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
@@ -108,13 +118,16 @@ export default function LocationSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/Purvanchal_Img.jpg"
-                alt="Location Map"
-                fill
-                className="object-cover"
-              />
+            <div className=" rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3361.31251440754!2d77.52901677548948!3d28.32168327583589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDE5JzE4LjEiTiA3N8KwMzEnNTMuNyJF!5e1!3m2!1sen!2sin!4v1738412491486!5m2!1sen!2sin"
+                width="100%"
+                height="450"
+                // style="border:0;"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
             <motion.div
               initial={{ scale: 0 }}
@@ -128,6 +141,5 @@ export default function LocationSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
