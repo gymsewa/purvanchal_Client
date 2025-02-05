@@ -154,6 +154,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="canonical" href="https://purvanchalprojects.com/new-launch-sector-22d" />
+        <link rel="icon" href="/purvanchal-logo.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/purvanchal-logo.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/purvanchal-logo.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/purvanchal-logo.png" />
+        <link rel="apple-touch-icon" href="/purvanchal-logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/purvanchal-logo.png" />
         <meta name="geo.region" content="IN-UP" />
         <meta name="geo.placename" content="Noida" />
         <meta name="geo.position" content="28.5355;77.3910" />
