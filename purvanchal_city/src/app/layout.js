@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -154,23 +153,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-         {/* Google Tag (gtag.js) */}
-         <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16848535568"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
 
-            gtag('config', 'AW-16848535568');
-          `}
-        </Script>
-        <link rel="canonical" href="https://purvanchalprojects.com/new-launch-sector-22d" />
-        <link rel="icon" href="/purvanchal-logo.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/purvanchal-logo.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/purvanchal-logo.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/purvanchal-logo.png" />
         <link rel="icon" type="image/png" sizes="48x48" href="/purvanchal-logo.png" />
         <link rel="apple-touch-icon" href="/purvanchal-logo.png" />
