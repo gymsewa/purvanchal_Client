@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -153,6 +154,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+
+      <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16848535568"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-16848535568');
+          `}
+        </Script>
 
   <link rel="icon" type="image/png" sizes="16x16" href="/purvanchal-logo.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/purvanchal-logo.png" />

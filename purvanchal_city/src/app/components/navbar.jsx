@@ -29,8 +29,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             {/* <span className={`font-bold text-xl ${scrolled ? "text-primary" : "text-white"}`}>Purvanchal</span> */}
-            <Image src="/purvanchal-logo.png" alt="Solist Logo" width={100} height={100} />
-            <Image src="/BLACK LOGO-01.png" alt="Solist Logo" width={100} height={100} />
+            <Image src="/purvanchal-logo.png" alt="Solist Logo" width={100} height={60} className="h-12"/>
+            <Image src="/BLACK LOGO-01.png" alt="Solist Logo" width={100} height={60} className="h-12"/>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
